@@ -1,11 +1,12 @@
 var queryURL = "https://api.nytimes.com/svc/topstories/v2/business.json";
+// https://api.nytimes.com/svc/topstories/v2/business.json?api-key=tCQnSqY7NiCqJiDVbL6eJMWojhkVdQ0i
 queryURL += '?' + $.param({
-    'api-key': "c4e81bd625614e2ba183058baa5c64a5"
+    'api-key': "tCQnSqY7NiCqJiDVbL6eJMWojhkVdQ0i"
 });
 $.ajax({
     url: queryURL,
     method: 'GET',
-}).done(function (result) {
+}).done(function(result) {
     console.log(result);
     //   var results = result.response.docs;
     //   for (var i = 0; i < results.length; i++) {
@@ -62,7 +63,7 @@ $.ajax({
     $("#url1").append("<a href=" + result.results["1"].url + " " + 'target="_blank"' + ">" +
         "Article Link" + "</a>");
     $("#url2").append("<a href=" + result.results["2"].url + " " + 'target="_blank"' + ">" +
-        "Article Link"+ "</a>");
+        "Article Link" + "</a>");
     $("#url3").append("<a href=" + result.results["3"].url + " " + 'target="_blank"' + ">" +
         "Article Link" + "</a>");
     $("#url4").append("<a href=" + result.results["4"].url + " " + 'target="_blank"' + ">" +
@@ -78,6 +79,6 @@ $.ajax({
     $("#url9").append("<a href=" + result.results["9"].url + " " + 'target="_blank"' + ">" +
         "Article Link" + "</a>")
 
-}).fail(function (err) {
+}).fail(function(err) {
     throw err;
 });
